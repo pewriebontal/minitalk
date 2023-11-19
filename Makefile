@@ -6,11 +6,9 @@
 #    By: mkhaing <0x@bontal.net>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/02 02:17:10 by mkhaing           #+#    #+#              #
-#    Updated: 2023/11/20 04:55:10 by mkhaing          ###   ########.fr        #
+#    Updated: 2023/11/20 07:40:38 by mkhaing          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
-
-NAME = minitalk
 
 SERVER_SRC = server.c
 CLIENT_SRC = client.c
@@ -29,8 +27,6 @@ CLIENT = client
 
 all : $(LIBFT) $(SERVER) $(CLIENT)
 
-$(NAME): all
-
 $(LIBFT): 
 	make -C $(LIBFT_PATH) all
 
@@ -40,7 +36,7 @@ $(SERVER): $(SERVER_SRC) $(BIN_ENCO_SRC) $(LIBFT)
 $(CLIENT): $(CLIENT_SRC) $(BIN_ENCO_SRC) $(LIBFT)
 	$(CC) $(CFLAGS) $(CLIENT_SRC) $(BIN_ENCO_SRC) $(LIBFT) -o $(CLIENT)
 
-clean : 
+clean :
 	make -C $(LIBFT_PATH) clean 
 	$(RM) $(SERVER) $(CLIENT)
 
@@ -49,4 +45,4 @@ fclean : clean
 
 re : fclean all
 
-.PHONY : all flean clean re
+.PHONY : all fclean clean re

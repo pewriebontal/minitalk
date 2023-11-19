@@ -6,12 +6,11 @@
 /*   By: mkhaing <0x@bontal.net>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 01:47:46 by mkhaing           #+#    #+#             */
-/*   Updated: 2023/11/20 05:29:25 by mkhaing          ###   ########.fr       */
+/*   Updated: 2023/11/20 07:36:30 by mkhaing          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minitalk.h"
-
 
 void	handle_signal(int sig)
 {
@@ -45,7 +44,10 @@ int	main(void)
 	int	pid;
 
 	pid = getpid();
-	ft_printf("PID: %d\n", pid);
+	ft_printf("┓     ╹      •  •   ┓┓ \n");
+	ft_printf("┣┓┏┓┏┓ ┏  ┏┳┓┓┏┓┓╋┏┓┃┃┏\n");
+	ft_printf("┗┛┗┛┛┗ ┛  ┛┗┗┗┛┗┗┗┗┻┗┛┗\n\n");
+	ft_printf("[PID] : %d\n\n", pid);
 	while (1)
 	{
 		signal(SIGUSR1, handle_signal);
