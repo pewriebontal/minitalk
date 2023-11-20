@@ -25,7 +25,7 @@ CFLAGS = -Wall -Werror -Wextra
 SERVER = server
 CLIENT = client
 
-all : $(LIBFT) $(SERVER) $(CLIENT)
+all : $(SERVER) $(CLIENT)
 
 $(LIBFT): 
 	make -C $(LIBFT_PATH) all
